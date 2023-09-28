@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        position: absolute;
+        width: 500px;
+        top: 150px;
+        left: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: solid 5px;
+    
+
+    }
+    label{
+        font-size: larger;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    }
+    input{
+        width: 300px;
+        border: solid 1px;
+    }
+    button{
+        width: 200px;
+        background-color: cadetblue;
+        color: antiquewhite;
+        border-radius: 5px;
+    }
+    button:hover{
+        background-color: brown;
+        color: aqua;
+    }
+</style>
+<div class="conatiner">
+    <form class="container">
+        <h1>Register</h1>
+    
+        <label  for="username">username</label>
+        <input id="username" type="text">
+        <br>
+        <label for="password">password</label>
+        <input id="password" type="password">
+        <br>
+        <button onclick="login()">submit</button>
+
+    </form>
+</div>
+<div class="select">
+    <select id="select" name="car">
+        <option id="ban1" value="ban1">bangalore</option>
+        <option id="mad1"  value="mad1">madras</option>
+        
+    </select>
+    pincode:<input id="bangalore" type="text">
+    pincode:<input id="madras" type="text">
+
+</div>
+
+<script>
+    function login(){
+        var username=document.getElementById("username").value;
+        var password=document.getElementById("password").value;
+        if(username=="admin"){
+            if(password=="123"){
+                window.open('hello.html',"blank")
+                
+            }
+        }else{
+            document.write("login failed")
+        }
+    }
+function select(){
+    var ban1=document.getElementById('ban1').value;
+    var mad1=document.getElementById('mad1').value;
+     var select=document.querySelector("select");
+      if(select==ban1){
+        document.getElementById("bangalore").textContent="5600091";
+        if(select==mad1){
+            document.getElementById("madras").textContent="1545354";
+        }else{
+            document.write('please select one');
+        }
+      }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const selectElement = document.getElementById('select');
+  const bangaloreInput = document.getElementById('bangalore');
+  const madrasInput = document.getElementById('madras');
+
+  selectElement.addEventListener('change', function() {
+    const selectedOption = selectElement.options[selectElement.selectedIndex];
+    
+    if (selectedOption.value === 'ban1') {
+      bangaloreInput.value = '560091';
+    } else if (selectedOption.value === 'mad1') {
+      madrasInput.value = '548555';
+    }
+  });
+});
+</script>
+
+</script>
+   
+</body>
+</html>
